@@ -41,7 +41,7 @@ SERVER = 'smtp.gmail.com'
 PORT = 587
 FROM = 'scrapertesting5041@gmail.com'
 TO = 'arcticm2015@gmail.com'
-PASS = 'verejykymrtopgnq'
+PASS = '*****'
 
 #creating the email
 
