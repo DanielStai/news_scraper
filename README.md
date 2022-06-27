@@ -1,6 +1,6 @@
 # Weather Data Scraper
 
-A python script that scrapes football news from [Guardian football news](https://www.guardian.com/football) site and sends the result as an email
+A python script that scrapes football news from [Guardian football news](https://www.theguardian.com/football) site and sends the result as an email
 
 
 
