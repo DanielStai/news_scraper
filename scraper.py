@@ -24,12 +24,12 @@ empty_mail = ''
 def extract_news(url):
     print ("Scraping from: " + url)
     content = ''
-    content += 'Top Football News Today' + '\n' + '\n'
+    content += '<h1>'+'Top Football News Today'+'</h1>' + '\n' + '\n'
     html = requests.get(url).content
     soup = BeautifulSoup(html, "html.parser")
     links = soup.find_all('a', attrs = { 'class' : "u-faux-block-link__overlay js-headline-text",  })
     for i, link in enumerate(links):
-        content += str(i+1) +' '+':::' + ' ' + link.text + ' '+ '-'+ ' ' + link['href'] + "\n" 
+        content += str(i+1) +' '+':::' + ' ' + link.text + ' '+ '-'+ ' ' + link['href'] + '<br>' + '\n'
     return content
 
 
@@ -51,7 +51,7 @@ msg['Subject'] = 'Here is your daily dose of Football news [Automated]' + ' '+ s
 msg['From'] = FROM
 msg['To'] = TO
 
-msg.attach(MIMEText(empty_mail, 'plain')) #can be plain or html
+msg.attach(MIMEText(empty_mail, 'html')) #can be plain or html
 
 #starting the server
 print('Initializing server...')
